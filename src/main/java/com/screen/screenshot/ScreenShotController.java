@@ -3,7 +3,7 @@ package com.screen.screenshot;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class ScreenShotController {
     @FXML
     private Label welcomeText;
 
