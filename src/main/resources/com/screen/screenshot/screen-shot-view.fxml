@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #def5e2;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.screen.screenshot.ScreenShotController">
    <AnchorPane fx:id="paneCapture" layoutX="164.0" layoutY="215.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 20; -fx-background-color: #a7f0b4;">
-      <Button fx:id="buttonCapture" layoutX="3.0" layoutY="3.0" mnemonicParsing="false" onAction="#setButtonCapture" onMousePressed="#handleMousePressed" onMouseReleased="#handleMouseReleased" prefHeight="65.0" prefWidth="65.0" style="-fx-background-radius: 50; -fx-background-color: #11cf30;" stylesheets="@style.css" text="Capturar" textFill="WHITE">
+      <Button fx:id="buttonCapture" layoutX="3.0" layoutY="3.0" mnemonicParsing="false" onAction="#setButtonCapture" onMousePressed="#handleMousePressed" onMouseReleased="#handleMouseReleased" prefHeight="65.0" prefWidth="65.0" style="-fx-background-radius: 50; -fx-background-color: #11cf30;" text="Capturar" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
