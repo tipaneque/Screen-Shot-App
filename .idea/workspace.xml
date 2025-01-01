@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf3846c9-fa39-4d1b-97b9-83328aabdd4d" name="Changes" comment="Criação do projecto">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/Main.java" afterDir="false" />
+    <list default="true" id="cf3846c9-fa39-4d1b-97b9-83328aabdd4d" name="Changes" comment="Implementando métodos do controller">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/ScreenShotApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/ScreenShotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/screenshot/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/screenshot/screen-shot-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/ScreenShotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/screen/screenshot/ScreenShotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/screenshot/screen-shot-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/screenshot/screen-shot-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MiroPedro"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MiroPedro&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/MiroPedro/Screen-Shot-App.git",
-    "accountId": "926d5485-7f81-4c15-aaf3-491e36c8a775"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MiroPedro/Screen-Shot-App.git&quot;,
+    &quot;accountId&quot;: &quot;926d5485-7f81-4c15-aaf3-491e36c8a775&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -50,9 +49,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2qpqUtL0SN1CfWnrnCHQ65nZJXx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -69,9 +68,12 @@
     "Application.Main.executor": "Run",
     "Application.ScreenShotApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RunManager">
@@ -111,7 +113,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735370087697</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modificando os arquivos">
+      <option name="closed" value="true" />
+      <created>1735376312026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735376312026</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Construíndo a tela principal">
+      <option name="closed" value="true" />
+      <created>1735376343826</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735376343826</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +146,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Criação do projecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação do projecto" />
+    <MESSAGE value="Modificando os arquivos" />
+    <MESSAGE value="Construíndo a tela principal" />
+    <MESSAGE value="Implementando métodos do controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementando métodos do controller" />
   </component>
 </project>
