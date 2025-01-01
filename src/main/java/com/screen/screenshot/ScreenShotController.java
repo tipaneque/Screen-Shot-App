@@ -14,7 +14,6 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -32,20 +31,26 @@ public class ScreenShotController implements Initializable {
     public AnchorPane panelSave;
     public StackPane stackPane;
     public AnchorPane paneCapture;
+    public Pane topPanel;
+    public Button buttonExit;
+    public Button buttonMinimize;
     private BufferedImage screenCapture;
     private File directory;
-
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttonCapture.setOnMouseEntered(e -> buttonCapture.setStyle("-fx-background-color: #22ea40; -fx-background-radius: 50;"));
-        buttonCapture.setOnMouseExited(e -> buttonCapture.setStyle("-fx-background-color: #11cf30; -fx-background-radius: 50;"));
-        buttonSave.setOnMouseEntered(e -> buttonSave.setStyle("-fx-background-color: #22ea40; -fx-background-radius: 15;"));
-        buttonSave.setOnMouseExited(e -> buttonSave.setStyle("-fx-background-color: #11cf30; -fx-background-radius: 15;"));
-        buttonDiscard.setOnMouseEntered(e -> buttonDiscard.setStyle("-fx-background-color: #f6b53a; -fx-background-radius: 15;"));
-        buttonDiscard.setOnMouseExited(e -> buttonDiscard.setStyle("-fx-background-color: #ec770f; -fx-background-radius: 15;"));
-
-
+        buttonCapture.setOnMouseEntered(e -> buttonCapture.setStyle("-fx-background-color: #22ea40; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: white"));
+        buttonCapture.setOnMouseExited(e -> buttonCapture.setStyle("-fx-background-color: #11cf30; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: white"));
+        buttonSave.setOnMouseEntered(e -> buttonSave.setStyle("-fx-background-color: #22ea40; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: white"));
+        buttonSave.setOnMouseExited(e -> buttonSave.setStyle("-fx-background-color: #11cf30; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: white"));
+        buttonDiscard.setOnMouseEntered(e -> buttonDiscard.setStyle("-fx-background-color: #f6b53a; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: white"));
+        buttonDiscard.setOnMouseExited(e -> buttonDiscard.setStyle("-fx-background-color: #ec770f; -fx-background-radius: 15;  -fx-border-radius: 15; -fx-border-color: white"));
+        buttonExit.setOnMouseEntered(e -> buttonExit.setStyle("-fx-background-color: #da2121; -fx-color: white; -fx-font-weight: bold;"));
+        buttonExit.setOnMouseExited(e -> buttonExit.setStyle("-fx-background-color:  #a7f0b4; -fx-font-weight: bold;"));
+        buttonMinimize.setOnMouseEntered(e -> buttonMinimize.setStyle("-fx-background-color:  #def5e2; -fx-font-weight: bold;"));
+        buttonMinimize.setOnMouseExited(e -> buttonMinimize.setStyle("-fx-background-color: #a7f0b4; -fx-font-weight: bold;"));
         screenCapture = null;
         imgView.setVisible(false);
         panelSave.setVisible(false);
@@ -59,8 +64,6 @@ public class ScreenShotController implements Initializable {
         } catch (AWTException e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 
     @FXML
@@ -100,10 +103,9 @@ public class ScreenShotController implements Initializable {
         String time = dateTime.getHour() + "" +dateTime.getMinute() + dateTime.getSecond() ;
         String fileName = "cap-" + date + "-" + time + ".png";
 
-
         if(!directory.exists()){
             if(directory.mkdir()){
-                System.out.println("Directorio criado");
+                System.out.println("Directório criado!");
             }
         }
 
@@ -120,7 +122,6 @@ public class ScreenShotController implements Initializable {
         Label label = new Label("Captura salva em " + directory);
         JFXSnackbar snackbar = new JFXSnackbar(stackPane);
         snackbar.enqueue(new JFXSnackbar.SnackbarEvent(label, Duration.millis(2400)));
-
     }
 
     @FXML
@@ -128,7 +129,7 @@ public class ScreenShotController implements Initializable {
         panelSave.setVisible(false);
         imgView.setVisible(false);
         paneCapture.setVisible(true);
-
+        screenCapture = null;
     }
 
     public void handleMousePressed(javafx.scene.input.MouseEvent mouseEvent) {
@@ -146,5 +147,31 @@ public class ScreenShotController implements Initializable {
         scaleTransition.setToX(scale);
         scaleTransition.setToY(scale);
         scaleTransition.play();
+    }
+
+    @FXML
+    protected void handleButtonExitAction(){
+        Stage stage = (Stage) buttonExit.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    protected void handleButtonMinimizeAction(){
+        Stage stage = (Stage) buttonMinimize.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    @FXML
+    protected void handleClickAction(javafx.scene.input.MouseEvent event){
+        Stage stage = (Stage) topPanel.getScene().getWindow();
+        xOffset = stage.getX() - event.getScreenX();
+        yOffset = stage.getY() - event.getScreenY();
+    }
+
+    @FXML
+    protected void handleMovementAction(javafx.scene.input.MouseEvent event){
+        Stage stage = (Stage) topPanel.getScene().getWindow();
+        stage.setX(event.getScreenX() + xOffset);
+        stage.setY(event.getScreenY() + yOffset);
     }
 }
